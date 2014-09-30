@@ -211,6 +211,16 @@ ssize_t DVDReadBytes( dvd_file_t *, void *, size_t );
 ssize_t DVDFileSize( dvd_file_t * );
 
 /**
+ * Returns the file size in bytes.
+ *
+ * @param dvd_file  A file read handle.
+ * @return The size of the file in bytes, -1 on error.
+ *
+ * bytes = DVDFileSize64(dvd_file);
+ */
+uint64_t DVDFileSize64( dvd_file_t * );
+
+/**
  * Get a unique 128 bit disc ID.
  * This is the MD5 sum of VIDEO_TS.IFO and the VTS_0?_0.IFO files
  * in title order (those that exist).
