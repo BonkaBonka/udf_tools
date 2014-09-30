@@ -1,0 +1,15 @@
+;; Object contrib/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "contrib/"
+  :tables (list
+   (semanticdb-table "dlfcn.c"
+    :major-mode 'c-mode
+    :tags '(("windows.h" include (:system-flag t) (dependency-file none) [176 196]) ("string.h" include (:system-flag t) (dependency-file "/usr/include/string.h") [197 216]) ("stdio.h" include (:system-flag t) (dependency-file "/usr/include/stdio.h") [217 235]) ("dlfcn.h" include nil (dependency-file "/usr/include/dlfcn.h") [237 255]) ("os_types.h" include nil (dependency-file none) [256 277]) ("dlopen" function (:pointer 1 :arguments (("module_name" variable (:pointer 1 :constant-flag t :type "char") (reparse-symbol arg-sub-list) [292 316]) ("mode" variable (:type "int") (reparse-symbol arg-sub-list) [317 326])) :type "void") nil [279 1389]) ("dlerror" function (:pointer 1 :arguments (("" variable (:type "void") (reparse-symbol arg-sub-list) [1405 1410])) :type "char") nil [1391 2576]) ("dlclose" function (:arguments (("handle" variable (:pointer 1 :type "void") (reparse-symbol arg-sub-list) [2590 2603])) :type "int") nil [2578 2638]) ("dlsym" function (:pointer 1 :arguments (("handle" variable (:pointer 1 :type "void") (reparse-symbol arg-sub-list) [2652 2665]) ("name" variable (:pointer 1 :constant-flag t :type "char") (reparse-symbol arg-sub-list) [2666 2683])) :type "void") nil [2640 2726]))
+    :file "dlfcn.c"
+    :pointmax 2727
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )
