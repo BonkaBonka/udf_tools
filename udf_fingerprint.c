@@ -42,11 +42,15 @@ char *tohex(unsigned char *bin, size_t binsz) {
 void process_file(dvd_reader_t *device, char *filename, EVP_MD_CTX *messagedigest_context, char *ext) {
 	if (filename_endswith(filename, ext)) {
 		dvd_file_t *file = DVDOpenFilename(device, filename);
-		ssize_t count;
+		ssize_t count, offset;
 		unsigned char buffer[DVDFileSize64(file)];
 
-		count = DVDReadBytes(file, buffer, sizeof(buffer));
-		assert(count == sizeof(buffer));
+		offset = 0;
+		while (offset < sizeof(buffer)) {
+			count = DVDReadBytes(file, buffer + offset, sizeof(buffer) - offset);
+			assert(count > 0);
+			offset += count;
+		}
 		EVP_DigestUpdate(messagedigest_context, buffer, sizeof(buffer));
 
 		DVDCloseFile(file);
